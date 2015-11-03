@@ -148,13 +148,13 @@ const Month = React.createClass(
 
     return (
       <div className="month">
-        <span className="day-label">Sunday</span>
-        <span className="day-label">Monday</span>
-        <span className="day-label">Tuesday</span>
-        <span className="day-label">Wednesday</span>
-        <span className="day-label">Thursday</span>
-        <span className="day-label">Friday</span>
-        <span className="day-label">Saturday</span>
+          <span className="day-label">Sun</span>
+          <span className="day-label">Mon</span>
+          <span className="day-label">Tue</span>
+          <span className="day-label">Wed</span>
+          <span className="day-label">Thu</span>
+          <span className="day-label">Fri</span>
+          <span className="day-label">Sat</span>
         { this.createBlankDays( start ) }
         { this.createDays() }
         { end === 7 ? null : this.createBlankDays( end ) }
