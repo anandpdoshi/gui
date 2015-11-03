@@ -232,28 +232,24 @@ const Calendar = React.createClass(
         <main className="calendar">
           <div
             className = "clearfix"
-            style     = {{ margin: "25px" }}
+            style     = {{ margin: "0 0 32px 0" }}
           >
-            <h1
-              className = "pull-left"
-              style     = {{ margin: 0 }}
-            ><b>{ month }</b> { year }</h1>
-
-            <ButtonGroup
-              className = "pull-right"
-              style     = {{ margin: 0 }}
+            
+            <div
+              className = "month-picker"
             >
-              <Button
-                onClick={ this.handlePage.bind( null, "prev" ) }
-              ><Icon glyph="arrow-triangle-left" /></Button>
-              <Button
-                onClick={ this.handleToday }
-              >Today</Button>
-              <Button
-                onClick={ this.handlePage.bind( null, "next" ) }
-              ><Icon glyph="arrow-triangle-right" /></Button>
-
-            </ButtonGroup>
+              <ButtonGroup>
+                <Button
+                  onClick={ this.handlePage.bind( null, "prev" ) }
+                ><Icon glyph="arrow-triangle-left" /></Button>
+                <Button
+                  onClick={ this.handleToday }
+                >Oct 2015</Button>
+                <Button
+                  onClick={ this.handlePage.bind( null, "next" ) }
+                ><Icon glyph="arrow-triangle-right" /></Button>
+              </ButtonGroup>
+            </div>
           </div>
 
           <Month

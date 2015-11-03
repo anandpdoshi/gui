@@ -6,6 +6,39 @@ main.calendar {
   
   overflow: visible;
 
+  .month-picker {
+    margin: 0 auto;
+    width: 202px;
+
+    // these could actually go under global styles
+    .btn-group { 
+
+      .btn-default{
+        background: #ffffff;
+        background: -moz-linear-gradient(top,  #ffffff 0%, #fbfbfb 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#fbfbfb));
+        background: -webkit-linear-gradient(top,  #ffffff 0%,#fbfbfb 100%);
+        background: -o-linear-gradient(top,  #ffffff 0%,#fbfbfb 100%);
+        background: -ms-linear-gradient(top,  #ffffff 0%,#fbfbfb 100%);
+        background: linear-gradient(to bottom,  #ffffff 0%,#fbfbfb 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fbfbfb',GradientType=0 );
+        border-color: #e2e5e7;
+      }
+
+      .btn{
+      height: 32px;
+      font-weight: 400;
+      color: #576270;
+      padding: 6px 10px;
+      width: 132px;
+
+        &:first-child, &:last-child{
+          width: auto;
+        }
+      }
+    }
+  }
+
   .month {
     background: white;
     border-radius: 2px;
