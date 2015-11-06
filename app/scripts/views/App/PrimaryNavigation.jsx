@@ -151,9 +151,9 @@ class PrimaryNavigation extends React.Component {
 
         <div className={ hostClass.join( " " ) }>
           <div className="logo-wrapper">
-            <img className="logo-image" src="/images/freenas-icon.png" />
-            <img className="logo-wordmark" src="/images/freenas-logotype.png" />
-            <img className="logo-x" src="/images/X.png" />
+            <img className="logo-image" src="/images/freenas-icon-small.png" />
+            <img className="logo-wordmark" src="/images/freenas-logotype-small.png" />
+            <img className="logo-x" src="/images/X-small.png" />
           </div>
 
           <span className="host-display">
