@@ -21,6 +21,7 @@ import websocket from "./websocket";
 import users from "./users";
 import groups from "./groups";
 import update from "./update";
+import calendar from "./calendar";
 
 // SERVICES
 import afp from "./afp";
@@ -53,6 +54,7 @@ const rootReducer = combineReducers(
   , users
   , groups
   , update
+  , calendar
 
   // SERVICES
   , afp
