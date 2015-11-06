@@ -69,11 +69,13 @@ nav.primary-nav {
 
   .user-info {
     color: #f3f3f3;
-    padding: 5px 30px 5px 5px;
 
     .item-graphic {
       float: left;
-      margin: 0 0.66em 0 0.33em;
+      margin-right: 16px;
+      width: 24px;
+      height: 24px;
+      border-radius: 2px;
     }
 
     .username, .fullname {
@@ -84,7 +86,9 @@ nav.primary-nav {
       margin: 0 0.25em;
     }
     .username {
-      font-weight: 500;
+      font-weight: 400;
+      text-transform: uppercase;
+      font-size: 0.85em;
     }
     .fullname {
       color: @gray-lighter;
@@ -95,10 +99,10 @@ nav.primary-nav {
   }
 
   .caret {
-    color: fade( white, 90% );
+    color: fade( white, 50% );
     position: absolute;
-    top: 50%;
-    right: 20px;
+    top: 45%;
+    right: 16px;
   }
 
   .btn-group {
@@ -162,9 +166,24 @@ nav.primary-nav {
     }
   }
 
+  .user-controls{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(250,250,250,0.08);
+
+    & > a{
+      padding: 12px 0;
+    }
+    .dropdown-menu{
+      top: -40px;
+      width: 100%;
+    }
+  }
+
   .dropdown.open > a {
-    #gradient > .vertical( rgba( 0, 0, 0, 0.25 ), fade( @brand-primary, 30% ) );
-    background-color : rgba( 0, 0, 0, 0.25 );
+    //#gradient > .vertical( rgba( 0, 0, 0, 0.25 ), fade( @brand-primary, 30% ) );
+    background-color : rgba( 250, 250, 250, 0.25 );
     color            : white;
   }
 

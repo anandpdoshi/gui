@@ -161,9 +161,12 @@ class PrimaryNavigation extends React.Component {
           </span>
         </div>
 
+        { paths.map( this.createNavItem ) }
+
         <NavDropdown
           id = "active-user-controls"
           title = { activeUser }
+          className = "user-controls"
         >
           <MenuItem
             key     = { 0 }
@@ -172,8 +175,6 @@ class PrimaryNavigation extends React.Component {
             {"Logout"}
           </MenuItem>
         </NavDropdown>
-
-        { paths.map( this.createNavItem ) }
 
       </Nav>
     );
