@@ -39,28 +39,31 @@ nav.primary-nav {
     color: white;
     display: block;
     margin: 0;
-    font-weight: 200;
+    font-weight: 500;
     font-size: 0.85em;
     letter-spacing: 0.1em;
     line-height: 1.25em;
-    padding-bottom: 0.85em;
-    text-align: center;
+    padding-bottom: 24px;
+    text-align: left;
     text-transform: uppercase;
     .box-shadow( inset 0 2px 12px -6px rgba( 0, 0, 0, 0.4 ) );
-    background-color: rgba( 0, 0, 0, 0.25 );
+    background-color: rgba( 250, 250, 250, 0.08 );
     .transition( ease-in-out 0.25s );
 
     &.connected {
-      .glowlight( @brand-success );
-      border-bottom-width: 2px;
+      //.glowlight( @brand-success );
+      border-bottom: 2px @brand-success solid;
     }
     &.disconnected {
-      .glowlight( @gray );
-      border-bottom-width: 2px;
+      //.glowlight( @gray );
+      border-bottom: 2px @gray solid;
     }
     &.simulation {
-      .glowlight( @brand-warning );
-      border-bottom-width: 2px;
+      //.glowlight( @brand-warning );
+      border-bottom: 2px @brand-warning solid;
+    }
+    .host-display{
+      margin-left: 56px;
     }
   }
 
