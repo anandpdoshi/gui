@@ -4,12 +4,12 @@
 
 // TODO: Revert changes made for #7908 once externally resolved.
 nav.primary-nav {
-  #gradient > .vertical( @freenas-gray, darken( @freenas-gray, 10% ) );
+  //#gradient > .vertical( @freenas-gray, darken( @freenas-gray, 10% ) );
   background-color   : @freenas-gray;
   overflow-x         : hidden;
   overflow-y         : auto;
   position           : relative;
-  min-width: 150px;
+  min-width: 192px;
   .flex( 0 0 auto );
 
   .logo-wrapper {
@@ -133,14 +133,17 @@ nav.primary-nav {
     position       : relative;
     vertical-align : inherit;
     line-height    : normal;
-    margin         : 0 1em;
+    margin         : 0 1em 0 8px;
+  }
+
+  li.nav-item{
+    margin-top: 0px;
   }
 
   .nav-item,
   .dropdown {
     & > a {
-      padding: 0.75em;
-      padding-right: 0;
+      padding: 15px 16px;
       white-space: nowrap;
       font-size: 14px;
       font-weight: 300;
@@ -158,10 +161,10 @@ nav.primary-nav {
       }
 
       & > a.active {
-        #gradient > .horizontal( rgba( 0, 0, 0, 0.25 ), fade( @brand-primary, 30% ) );
+        //#gradient > .horizontal( rgba( 0, 0, 0, 0.25 ), fade( @brand-primary, 30% ) );
         background-color : rgba( 0, 0, 0, 0.25 );
         color            : white;
-        border-right     : 8px solid @brand-primary;
+        //border-right     : 8px solid @brand-primary;
       }
     }
   }
@@ -188,12 +191,11 @@ nav.primary-nav {
   }
 
   .nav-item-label {
-    padding-right  : 0.75em;
     vertical-align : inherit;
-    font-weight: 100;
+    font-weight: 400;
+    font-size: 0.85em;
     text-transform: uppercase;
-    font-size: 0.75em;
-    letter-spacing: 0.15em;
+    letter-spacing: 1px;
   }
 }
 
