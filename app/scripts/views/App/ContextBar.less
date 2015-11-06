@@ -30,11 +30,29 @@
 }
 
 .context-dashboard {
-  .flex( 1 );
-  .flex-display( flex );
-  .flex-flow( column );
+  padding: 16px 0px 0px 0px;
+  border-top: 1px solid #e9ecef;
 
-  .progress-bar {
-    color: black;
+  .basic-meter {
+    margin: 0px;
+
+    .progress {
+      height: 2px;
+      margin-bottom: 12px;
+    }
+
+    & > h5 {
+      text-transform: uppercase;
+      color: #3D3D3D;
+      font-weight: 400;
+      font-size: 0.85em;
+      letter-spacing: 1px;
+
+      .percentage {
+        color: #121212;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
   }
 }
