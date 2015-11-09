@@ -11,6 +11,7 @@ import React from "react";
 import EventBus from "../../utility/EventBus";
 import DashboardContext from "../Dashboard/DashboardContext";
 import TopologyEditContext from "../Storage/contexts/TopologyEditContext";
+import CalendarTasksContext from "../Calendar/CalendarTasksContext"
 
 // STYLESHEET
 if ( process.env.BROWSER ) require( "./ContextBar.less" );
@@ -29,7 +30,9 @@ const ContextBar = ( props ) => {
               // TODO: The thing for volumes that exist
             }
           }
-
+          break;
+        case "/calendar":
+          return <CalendarTasksContext events = { props.events } />
       }
     }
 

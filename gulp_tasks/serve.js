@@ -62,6 +62,8 @@ function startFreeNASApp ( mode ) {
                , { silent   : true
                  , args     : appMonitorArgs
                  , killtree : true
+                 , watch: true
+                 , watchDirectory: "app"
                  }
                );
 

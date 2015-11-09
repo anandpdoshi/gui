@@ -138,6 +138,7 @@ class App extends React.Component {
                 <ContextBar
                   location = { this.props.location }
                   volumes  = { this.props.state.volumes }
+                  events = { this.props.state.events }
                 />
               </div>
             }

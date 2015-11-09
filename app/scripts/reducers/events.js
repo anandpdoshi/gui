@@ -6,7 +6,7 @@
 import * as TYPES from "../actions/actionTypes";
 
 const INITIAL_STATE =
-  { events: "TODO: Store events :)"
+  { events: new Set()
   };
 
 
