@@ -17,7 +17,7 @@ export default class ScrubTask extends React.Component {
 
   render () {
     var taskTitle = this.props.taskID
-                  ? "ZFS Scrub" + " - " + this.props.taskID
+                  ? "ZFS Scrub"
                   : "ZFS Scrub";
 
     var deleteButton = null;

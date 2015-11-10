@@ -1,35 +1,24 @@
-// SMART Task
+// Rsync
 // ==========
 // Draggable widget to place on the Calendar in order to schedule a new
-// recurring S.M.A.R.T. test on a disk.
+// ...
 
 "use strict";
 
 import React from "react";
 import { Alert } from "react-bootstrap";
 
-export default class SmartTask extends React.Component {
+export default class Rsync extends React.Component {
 
   constructor ( props ) {
     super( props );
-    this.displayName = SmartTask;
+    this.displayName = Rsync;
   }
 
   render () {
-
-    var taskTarget = "";
-    if ( this.props.disks ) {
-      if ( this.props.disks.length === 1 ) {
-      taskTarget = this.props.disks[0].path;
-      } else if ( this.props.disks.length > 1 ) {
-        taskTarget = "Multiple Disks";
-      }
-    }
-
-    var taskTitle = this.props.testType
-                  ? "S.M.A.R.T. Test"
-                  : "S.M.A.R.T. Test"
-
+    var taskTitle = this.props.taskID
+                  ? "Rsync"
+                  : "Rsync";
 
     var deleteButton = null;
     if ( this.props.handleTaskRemove ) {
@@ -39,26 +28,25 @@ export default class SmartTask extends React.Component {
           onClick = { this.props.handleTaskRemove }
         />;
     }
+
     return (
       <Alert
         bsStyle = "info"
         bsSize = "small"
-        className = "smart-task"
+        className = "rsync-task"
         onClick = { this.props.chooseActiveTask }>
         <span>{ taskTitle }</span>
-        <p>{ taskTarget }</p>
+        <p>{ this.props.volumeName }</p>
         { deleteButton }
       </Alert>
     );
   }
 };
 
-SmartTask.propTypes = { disks: React.PropTypes.array
-                      , testType: React.PropTypes.string
+Rsync.propTypes = { volumeName: React.PropTypes.string
                       , chooseActiveTask: React.PropTypes.func
                       , handleTaskRemove: React.PropTypes.func
+                      , taskID: React.PropTypes.string
                       };
 
-SmartTask.defaultProps = { disks: []
-                         , testType: null
-                         };
+Rsync.defaultProps = { volumeName: null };

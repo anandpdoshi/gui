@@ -14,6 +14,11 @@ import DropTarget from "../../components/DropTarget";
 
 import ScrubTask from "./TaskWidgets/ScrubTask";
 import SmartTask from "./TaskWidgets/SmartTask";
+import Snapshot from "./TaskWidgets/Snapshot";
+import VMSnapshot from "./TaskWidgets/VMSnapshot";
+import Replication from "./TaskWidgets/Replication";
+import CronJob from "./TaskWidgets/CronJob";
+import Rsync from "./TaskWidgets/Rsync";
 
 const CalendarTaskContext = React.createClass(
   {
@@ -57,6 +62,46 @@ const CalendarTaskContext = React.createClass(
                 namespace = "calendar"
                 payload = "smart">
                 <SmartTask/>
+              </DragTarget>
+            </DropTarget>
+            <DropTarget
+              namespace = "calendar">
+              <DragTarget
+                namespace = "calendar"
+                payload = "snapshot">
+                <Snapshot/>
+              </DragTarget>
+            </DropTarget>
+            <DropTarget
+              namespace = "calendar">
+              <DragTarget
+                namespace = "calendar"
+                payload = "vmware-snapshot">
+                <VMSnapshot/>
+              </DragTarget>
+            </DropTarget>
+            <DropTarget
+              namespace = "calendar">
+              <DragTarget
+                namespace = "calendar"
+                payload = "replication">
+                <Replication/>
+              </DragTarget>
+            </DropTarget>
+            <DropTarget
+              namespace = "calendar">
+              <DragTarget
+                namespace = "calendar"
+                payload = "cronjon">
+                <CronJob/>
+              </DragTarget>
+            </DropTarget>
+            <DropTarget
+              namespace = "calendar">
+              <DragTarget
+                namespace = "calendar"
+                payload = "rsync">
+                <Rsync/>
               </DragTarget>
             </DropTarget>
           </div>
