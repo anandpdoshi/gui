@@ -63,12 +63,12 @@ const CalendarTaskContext = React.createClass(
         calendarContext = (
           <div className="calendar-create-event">
             <div className="calendar-icon">
-              <Icon glyph="icon-calendar" />
+              <img src="/images/empty-events-graphic.png"/>
             </div>
-            <span>
+            <p>
               { "Schedule tasks for your" } <br/>
               { "system, volumns, or datasets" }
-            </span>
+            </p>
             <Button onClick={ this.createEvent }>
               { "Create an Event" }
             </Button>
@@ -77,7 +77,7 @@ const CalendarTaskContext = React.createClass(
       }
 
       return (
-        <div className="context-content context-disks">
+        <div className="context-content calendar-context">
           { calendarContext }
         </div>
       )

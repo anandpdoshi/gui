@@ -164,3 +164,49 @@ main.calendar {
     }
   }
 }
+
+
+// Context bar styles
+
+.app-sidebar .calendar-context{
+  background: #ffffff;
+  width: 100%;
+  -webkit-box-shadow: 1px 0px 0px 0px rgba(233,236,239,1);
+  -moz-box-shadow: 1px 0px 0px 0px rgba(233,236,239,1);
+  box-shadow: 1px 0px 0px 0px rgba(233,236,239,1);
+  padding: 24px;
+  white-space: nowrap;
+
+  &:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+  .calendar-create-event{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #576270;
+
+    .calendar-icon{
+      margin-bottom: 1.4em;
+    }
+    p{
+      font-weight: 400;
+      margin-bottom: 1.4em;
+    }
+    .btn-default{
+      // Should be globally styled
+      background: #3399ff;
+      color: #ffffff;
+      border-color: #198bfd;
+      font-size: 1em;
+    }
+  }
+
+}
+
