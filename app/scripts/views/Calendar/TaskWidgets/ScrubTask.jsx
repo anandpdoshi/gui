@@ -33,6 +33,7 @@ export default class ScrubTask extends React.Component {
       <Alert
         bsStyle = "info"
         bsSize = "small"
+        className = "scrub-task"
         onClick = { this.props.chooseActiveTask }>
         <span>{ taskTitle }</span>
         <p>{ this.props.volumeName }</p>

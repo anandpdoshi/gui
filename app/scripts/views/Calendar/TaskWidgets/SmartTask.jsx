@@ -43,6 +43,7 @@ export default class SmartTask extends React.Component {
       <Alert
         bsStyle = "info"
         bsSize = "small"
+        className = "smart-task"
         onClick = { this.props.chooseActiveTask }>
         <span>{ taskTitle }</span>
         <p>{ taskTarget }</p>
