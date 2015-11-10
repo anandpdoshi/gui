@@ -28,6 +28,10 @@ const CalendarTaskContext = React.createClass(
       this.setState({ create: true });
     },
 
+    cancelEvent() {
+      this.setState({ create: false });
+    },
+
     render() {
       let calendarContext;
 
@@ -36,7 +40,8 @@ const CalendarTaskContext = React.createClass(
           <div>
             <div className="context-section-header">
               <h5>{ "drag tasks on a day to create events" }</h5>
-              <a className="close-icon"><Icon glyph="icon-close" /></a>
+              <a onClick={ this.cancelEvent } className="close-icon"><Icon glyph="icon-close" />
+              </a>
             </div>
             <DropTarget
               namespace = "calendar">
