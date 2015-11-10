@@ -234,7 +234,7 @@ const Calendar = React.createClass(
             className = "clearfix"
             style     = {{ margin: "0 0 32px 0" }}
           >
-            
+
             <div
               className = "month-picker"
             >
@@ -244,7 +244,7 @@ const Calendar = React.createClass(
                 ><Icon glyph="arrow-triangle-left" /></Button>
                 <Button
                   onClick={ this.handleToday }
-                >Oct 2015</Button>
+                > { activeMoment.format("MMM YYYY") } </Button>
                 <Button
                   onClick={ this.handlePage.bind( null, "next" ) }
                 ><Icon glyph="arrow-triangle-right" /></Button>

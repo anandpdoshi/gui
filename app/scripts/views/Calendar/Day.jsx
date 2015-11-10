@@ -137,21 +137,22 @@ const Day = React.createClass (
     }
 
     return (
-      <div
-        key={ this.props.index }
-        className= { dayClass.join( " " ) }
-        onClick = { this.props.chooseDate }
-      >
-        <DropTarget
-          className="day-content"
-          callback={ this.props.handleTaskAdd }
-          namespace="calendar"
-          activeDrop
+      <td key={ this.props.index }>
+        <div
+          className= { dayClass.join( " " ) }
+          onClick = { this.props.chooseDate }
         >
-          <span className="day-numeral">{ this.props.dayOfMonth }</span>
-          { this.createTasks() }
-        </DropTarget>
-      </div>
+          <DropTarget
+            className="day-content"
+            callback={ this.props.handleTaskAdd }
+            namespace="calendar"
+            activeDrop
+          >
+            <span className="day-numeral">{ this.props.dayOfMonth }</span>
+            { this.createTasks() }
+          </DropTarget>
+        </div>
+      </td>
     );
   }
 });

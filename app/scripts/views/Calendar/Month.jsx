@@ -91,11 +91,12 @@ const Month = React.createClass(
 
     for ( let i = 0; i < number; i++ ) {
       result.push(
-        <div
-          key={ i }
-          className="day">
-          <span className="day-content day-blank"></span>
-        </div>
+        <td key={ i }>
+          <div
+            className="day">
+            <span className="day-content day-blank"></span>
+          </div>
+        </td>
       );
     }
 
@@ -114,7 +115,7 @@ const Month = React.createClass(
 
     var result = [];
 
-    for ( let i = 1; i < activeDate.daysInMonth(); i++ ) {
+    for ( let i = 1; i <= activeDate.daysInMonth(); i++ ) {
       result.push(
         <Day
           key = { i }
@@ -138,6 +139,20 @@ const Month = React.createClass(
     return result;
   }
 
+  , renderDays( monthDays ) {
+    var result = [];
+
+    for ( let i=0, l=Math.round( monthDays.length / 7 ); i < l; i++ ) {
+      result.push(
+        <tr key = { i }>
+          { monthDays.slice(i * 7, i * 7 + 7) }
+        </tr>
+      );
+    }
+
+    return result;
+  }
+
   , render () {
     var activeMoment = moment()
                       .year( this.props.activeYear )
@@ -146,19 +161,36 @@ const Month = React.createClass(
     var start = activeMoment.startOf( "month" ).day();
     var end = ( 7 - ( ( start + activeMoment.daysInMonth() ) % 7 ) );
 
+    var monthDays = this.createDays();
+    var daysInFirstWeek = 7 - start;
+    var daysInLastWeek = ( monthDays.length - daysInFirstWeek ) % 7;
+    var daysInMidWeeks = monthDays.length - daysInFirstWeek - daysInLastWeek;
+
     return (
-      <div className="month">
-          <span className="day-label">Sun</span>
-          <span className="day-label">Mon</span>
-          <span className="day-label">Tue</span>
-          <span className="day-label">Wed</span>
-          <span className="day-label">Thu</span>
-          <span className="day-label">Fri</span>
-          <span className="day-label">Sat</span>
-        { this.createBlankDays( start ) }
-        { this.createDays() }
-        { end === 7 ? null : this.createBlankDays( end ) }
-      </div>
+      <table className="month">
+        <thead>
+          <tr>
+            <th className="day-label">Sun</th>
+            <th className="day-label">Mon</th>
+            <th className="day-label">Tue</th>
+            <th className="day-label">Wed</th>
+            <th className="day-label">Thu</th>
+            <th className="day-label">Fri</th>
+            <th className="day-label">Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            { this.createBlankDays( start ) }
+            { monthDays.slice( 0, daysInFirstWeek ) }
+          </tr>
+          { this.renderDays( monthDays.slice( daysInFirstWeek, daysInFirstWeek + daysInMidWeeks ) ) }
+          <tr>
+            { monthDays.slice( daysInFirstWeek + daysInMidWeeks ) }
+            { end === 7 ? null : this.createBlankDays( end ) }
+          </tr>
+        </tbody>
+      </table>
     );
   }
 

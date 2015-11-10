@@ -3,7 +3,7 @@
 @import ( reference ) "@{styles-path}core.less";
 
 main.calendar {
-  
+
   overflow: visible;
   background: #f3f6f9;
   padding: 40px;
@@ -13,7 +13,7 @@ main.calendar {
     width: 202px;
 
     // these could actually go under global styles
-    .btn-group { 
+    .btn-group {
 
       .btn-default{
         background: #ffffff;
@@ -47,14 +47,20 @@ main.calendar {
     box-shadow: 0px 0px 1px rgba(0,0,0,0.3);
     min-width: 720px; // might be good to cap the whole app to a min-width
 
+    tbody > tr > td {
+      height: 100px;
+    }
+
     .day,
     .day-label {
       min-width: (100% / 7);
-      float    : left;
+      // float    : left;
     }
 
     .day {
-      min-height: calc(~"(100% - 182px) / 5");
+      // min-height: calc(~"(100% - 182px) / 5");
+      // height: 100px;
+      min-height: 100%;
       position: relative;
       background: #ffffff;
       &:nth-child(7n) .day-content,
@@ -294,8 +300,3 @@ main.calendar, .app-sidebar .calendar-context{
     }
   }
 }
-
-
-
-
-
