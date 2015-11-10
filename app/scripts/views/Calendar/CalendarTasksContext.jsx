@@ -34,11 +34,10 @@ const CalendarTaskContext = React.createClass(
       if (this.state.create) {
         calendarContext = (
           <div>
-            <h5 className="context-section-header type-line">
-              <span className="text">
-                { "New System Tasks" }
-              </span>
-            </h5>
+            <div className="context-section-header">
+              <h5>{ "drag tasks on a day to create events" }</h5>
+              <a className="close-icon"><Icon glyph="icon-close" /></a>
+            </div>
             <DropTarget
               namespace = "calendar">
               <DragTarget
@@ -58,6 +57,11 @@ const CalendarTaskContext = React.createClass(
           </div>
         );
       } else if (this.state.events.length) {
+        calendarContext = (
+          <div>
+            <h5>{ "hello event" }</h5>
+          </div>
+        );
 
       } else {
         calendarContext = (

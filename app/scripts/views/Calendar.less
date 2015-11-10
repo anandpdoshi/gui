@@ -175,7 +175,6 @@ main.calendar {
   -moz-box-shadow: 1px 0px 0px 0px rgba(233,236,239,1);
   box-shadow: 1px 0px 0px 0px rgba(233,236,239,1);
   padding: 24px;
-  white-space: nowrap;
   position: relative;
 
   .calendar-create-event{
@@ -201,6 +200,32 @@ main.calendar {
       color: #ffffff;
       border-color: #198bfd;
       font-size: 1em;
+    }
+  }
+
+  .context-section-header{
+    margin: 0 0 1.5em 0;
+    padding-right: 24px;
+    position: relative;
+
+    h5{
+      margin:0;
+      color: #4d5d6c;
+      font-size: 0.85em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.75em;
+    }
+    .close-icon{
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: #4d5d6c;
+      font-size: 1.4em;
+
+      &:hover{
+        text-decoration: none;
+      }
     }
   }
 
